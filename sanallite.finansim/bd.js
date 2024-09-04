@@ -1,0 +1,1 @@
+/* Arquivos js não servem como banco de dados sql, pelo menos em mobille... */
