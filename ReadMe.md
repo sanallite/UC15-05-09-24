@@ -49,3 +49,6 @@ Caso a instalação do React Native web tenha problemas de dependência, instale
 Banco de dados SQLite
 
 ``npm install --save react-native-sqlite-storage``
+
+## Protótipo no Figma
+[Figma](https://www.figma.com/design/s2pnA0seBIVWfZWlOaJChV/App-de-Finan%C3%A7as?node-id=0-1&t=19tIYorPdagTO9BV-1)
