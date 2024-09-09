@@ -7,16 +7,23 @@ Facilitar o controle de gastos e resultados de uma empresa, que irá cadastrar s
 ## Estado atual:
 
 O app tem navegação de telas por pilha e também por guias,
+
 Utiliza arrays como fonte de dados para as listas,
+
 Tem a estilização e estrutura dos itens nas telas bem definidos.
 
 ## O que falta implementar:
 
 Conexão com um banco de dados para substituir os arrays,
+
 Exibir os dados dividindo-os pelos meses do ano, assim adicionando mais detalhes aos relatórios,
+
 Tela de criação dos setores da empresa, através de uma seleção de opções,
+
 Tela de edição dos dados das tabelas,
+
 Ajustar a estilização conforme as novas implementações,
+
 Terminar a documentação, com protótipo de design e diagramas
 
 ## Instalação das bibliotecas:
