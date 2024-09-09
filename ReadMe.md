@@ -1,16 +1,16 @@
-Projeto Integrador Desenvolvimento Mobile - Finansim, finanças empresariais.
+# Projeto Integrador Desenvolvimento Mobile - Finansim, finanças empresariais.
 
-Objetivo da aplicação:
+## Objetivo da aplicação:
 
 Facilitar o controle de gastos e resultados de uma empresa, que irá cadastrar seus setores, registrar seus números e ver relatórios sobre o estado financeiro atual da empresa, com o foco em três categorias: Vendas, Compras e Pagamentos.
 
-Estado atual:
+## Estado atual:
 
 O app tem navegação de telas por pilha e também por guias,
 Utiliza arrays como fonte de dados para as listas,
 Tem a estilização e estrutura dos itens nas telas bem definidos.
 
-O que falta implementar:
+## O que falta implementar:
 
 Conexão com um banco de dados para substituir os arrays,
 Exibir os dados dividindo-os pelos meses do ano, assim adicionando mais detalhes aos relatórios,
@@ -19,11 +19,11 @@ Tela de edição dos dados das tabelas,
 Ajustar a estilização conforme as novas implementações,
 Terminar a documentação, com protótipo de design e diagramas
 
-Instalação das bibliotecas:
+## Instalação das bibliotecas:
 
 React Native web
 
-``npx expo install react-native-web react-dom @expo/metro-runtime``
+``node npx expo install react-native-web react-dom @expo/metro-runtime``
 
 Navegação de telas
 
