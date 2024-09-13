@@ -1,0 +1,1 @@
+Invariant Violation: requireNativeComponent: "RNSScreenStackHeaderConfig" was not found in the UIManager.
