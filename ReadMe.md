@@ -1,8 +1,11 @@
-# Projeto Integrador Desenvolvimento Mobile - Finansim, finanças empresariais.
+# Projeto Integrador Desenvolvimento Mobile - Finansim
 
 ## Objetivo da aplicação:
 
 Facilitar o controle de gastos e resultados de uma empresa, que irá cadastrar seus setores, registrar seus números e ver relatórios sobre o estado financeiro atual da empresa, com o foco em três categorias: Vendas, Compras e Pagamentos.
+
+>[!NOTE]
+> O repositório contém três projetos, o principal é finansim. O segundo, sanallite-finansim é a versão anterior, sem conexão com o banco de dados; e o terceiro, sanallite-fisico é um projeto para testes usando o firebase.
 
 ## Estado atual:
 
@@ -10,7 +13,9 @@ O app tem navegação de telas por pilha e também por guias,
 
 Utiliza arrays como fonte de dados para as listas,
 
-Tem a estilização e estrutura dos itens nas telas bem definidos.
+Tem a estilização e estrutura dos itens nas telas bem definidas pelo protótipo no Figma
+
+A documentação está com todos os tópicos que serão mencionados, com as informações sendo atualizadas conforme o desenvolvimento,
 
 ## O que falta implementar:
 
@@ -22,33 +27,10 @@ Tela de criação dos setores da empresa, através de uma seleção de opções,
 
 Tela de edição dos dados das tabelas,
 
-Ajustar a estilização conforme as novas implementações,
+Estilização e conteúdos do segundo projeto no principal.
 
-Terminar a documentação, com protótipo de design e diagramas
-
-## Instalação das bibliotecas:
-
-React Native web
-
-``node npx expo install react-native-web react-dom @expo/metro-runtime``
-
-Navegação de telas
-
-``npx expo install @react-navigation/native``
-
-``npx expo install @react-navigation/native-stack``
-
-``npx expo install @react-navigation/bottom-tabs``
-
-``npx expo install react-native-screens react-native-safe-area-context``
-
-Caso a instalação do React Native web tenha problemas de dependência, instale a versão correta:
-
-``npm install react@18.2.0 react-dom@18.2.0 react-native-web@0.19.10 @expo/metro-runtime@3.2.3``
-
-Banco de dados SQLite
-
-``npm install --save react-native-sqlite-storage``
+>[!IMPORTANT]
+> Consulte o arquivo ``requirements.txt`` para saber as bibliotecas e dependencias usadas.
 
 ## Protótipo no Figma
 [Figma](https://www.figma.com/design/s2pnA0seBIVWfZWlOaJChV/App-de-Finan%C3%A7as?node-id=0-1&t=19tIYorPdagTO9BV-1)
