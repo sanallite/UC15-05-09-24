@@ -12,8 +12,7 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.sanallite.finansim"
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
