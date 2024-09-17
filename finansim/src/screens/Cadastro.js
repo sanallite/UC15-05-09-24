@@ -1,14 +1,10 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Pressable } from 'react-native';
-
+import { View, Text, TextInput, Pressable, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-
-import { firebase } from '@react-native-firebase/auth';
-import auth from '@react-native-firebase/auth';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../firebase';
 
 import { estilo } from './cadastro_entrada_estilo';
-
-/* firebase.initializeApp(); */
 
 export default function Cadastro() {
     const nav = useNavigation();
@@ -17,22 +13,34 @@ export default function Cadastro() {
     const [ senha_digitada, setSenha ] = useState('');
     const [ senha_confirmada, setSenhaConf ] = useState('');
 
-    let mensagemErro;
-
-    const cadastro = (email, senha, senha_confirmada) => {
+    const cadastro = async (email, senha, senha_confirmada) => {
         if ( senha === senha_confirmada ) {
-            auth().createUserWithEmailAndPassword(email,senha)
-            .then( () => {
-                alert('Usuário Cadastrado');
-            } )
-            .catch( (err) => console.log('Ocorreu um erro: '+err) );
+            try {
+                // Ensure that the `auth` instance is correctly passed to the function
+                const userCredential = await createUserWithEmailAndPassword(auth, email, senha);
+                console.log('Usuário criado:', userCredential.user);
+
+                /* Componente de alerta com botão de confirmação */
+                Alert.alert(
+                    'Usuário criado',
+                    'Usuário criado com sucesso!',
+                    [
+                        { text: 'Continuar', onPress: () => nav.navigate('Inicial') }
+                    ]
+                    /* Após o usuário apertar no botão será feita a navegação da tela. */
+                );
+            }
+
+            catch (error) {
+                console.error('Erro ao criar usuário:', error.message);
+                Alert.alert('Erro ao criar usuário', 'Verifique os dados e tente novamente' )
+            }
         }
-    
+
         else {
-            mensagemErro = 'As senhas não coincidem!';
-            alert(mensagemErro);
-        }
-    }
+            Alert.alert('Erro', 'As senhas não coincidem!')
+        }       
+    };
     
     return (
         <View>

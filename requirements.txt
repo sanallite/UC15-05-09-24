@@ -10,6 +10,9 @@ react-navigation/bottom-tabs 6.6.1
 react-native-screens 3.31.1
 react-native-safe-area-context 4.10.5
 firebase 10.13.1
+expo/metro-runtime 3.2.3
+react-dom 18.2.0
+react-native-web 0.19.10
 
 // Apenas no projeto sanallite-finansim:
 react-native-sqlite-storage 6.0.1
