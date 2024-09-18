@@ -1,3 +1,5 @@
+/* Não usada */
+
 import auth from '@react-native-firebase/auth';
 
 const cadastro = (email, senha, senha_confirmada) => {

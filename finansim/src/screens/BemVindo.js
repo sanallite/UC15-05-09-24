@@ -2,6 +2,8 @@ import React from 'react';
 import { View, Text, Image, Pressable, Alert } from 'react-native';
 
 import { estilo } from './inicial_bem_vindo_estilo';
+import { auth } from '../../firebase';
+import { onAuthStateChange } from 'firebase/auth';
 
 import Pressionaveis from '../components/Pressionaveis/Pressionaveis';
 
@@ -18,6 +20,10 @@ export default function BemVindo() {
 
     const navegarTelaEntrada = () => {
         nav.navigate('Entrada')
+    }
+
+    if ( auth.currentUser ) {
+        nav.navigate('Inicial')
     }
 
     return (
@@ -43,7 +49,7 @@ export default function BemVindo() {
             </View>
 
             <View>
-                <Pressable onPress={ () => Alert.alert('Teste', 'Alerta exibido', [ { text: 'Botão', onPress: () => nav.navigate('Entrada') } ]) }>
+                <Pressable onPress={ () => Alert.alert('Teste', 'Alerta exibido', [ { text: 'Botão', onPress: () => /* nav.navigate('Entrada') */  console.log(auth.currentUser) } ]) }>
                     <Text>Teste</Text>
                 </Pressable>
             </View>
