@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebase';
 
-import { MMKV } from 'react-native-mmkv';
+import { MMKVLoader } from 'react-native-mmkv-storage';
 
 import { estilo } from './cadastro_entrada_estilo';
 
@@ -16,7 +16,7 @@ export default function Cadastro() {
     const [ senha_digitada, setSenha ] = useState('');
     const [ senha_confirmada, setSenhaConf ] = useState('');
 
-    const armazenamento = new MMKV();
+    const armazenamento = new MMKVLoader().initialize();
 
     const cadastro = async (email, senha, senha_confirmada) => {
         if ( senha === senha_confirmada ) {

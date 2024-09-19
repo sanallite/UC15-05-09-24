@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebase';
 
-import { MMKV } from 'react-native-mmkv';
+import { MMKVLoader } from 'react-native-mmkv-storage';
 
 export default function Entrada() {
     const [email_digitado, setEmail] = useState('');
@@ -13,7 +13,7 @@ export default function Entrada() {
 
     const nav = useNavigation();
 
-    const armazenamento = new MMKV();
+    const armazenamento = new MMKVLoader().initialize();
 
     const entrada = async (email, senha) => {
         try {

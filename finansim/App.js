@@ -2,28 +2,27 @@ import React, { useEffect, useState } from 'react';
 import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 
-import { MMKV } from 'react-native-mmkv';
+/* import { MMKV } from 'react-native-mmkv'; */
+import { MMKVLoader } from 'react-native-mmkv-storage';
 
 import './firebase';
 
 import StackNav from './src/routes/StackNav';
 import Relatorios from './src/routes/Relatorios';
 
-/* const armazenamento = new MMKV(); */
-
-import { TurboModuleRegistry } from 'react-native';
+/* import { TurboModuleRegistry } from 'react-native';
 
 const isTurboModuleEnabled = !!TurboModuleRegistry.get('MMKVModule');
-console.log('TurboModules enabled:', isTurboModuleEnabled);
+console.log('TurboModules enabled:', isTurboModuleEnabled); */
 
 
 export default function App() {
+  const armazenamento = new MMKVLoader().initialize();
   
-
   const [ usuarioAtivo, setUsuario ] = useState(null);
   const [ carregando, setCarregando ] = useState(true);
 
-  /* useEffect( () => {
+  useEffect( () => {
       const usuarioArmazenado = armazenamento.getString('usuario');
 
       if ( usuarioArmazenado ) {
@@ -32,7 +31,7 @@ export default function App() {
 
       setCarregando(false);
     }, []
-  ) */
+  )
   return (
     <NavigationContainer>
       <StatusBar />
