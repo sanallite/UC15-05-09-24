@@ -109,7 +109,7 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'com.sanallite.finansim'
+    namespace "com.finansim"
     defaultConfig {
         applicationId 'com.sanallite.finansim'
         minSdkVersion rootProject.ext.minSdkVersion

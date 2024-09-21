@@ -5,8 +5,6 @@ import { useNavigation } from '@react-navigation/native';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebase';
 
-import { MMKVLoader } from 'react-native-mmkv-storage';
-
 import { estilo } from './cadastro_entrada_estilo';
 
 export default function Cadastro() {
@@ -16,17 +14,12 @@ export default function Cadastro() {
     const [ senha_digitada, setSenha ] = useState('');
     const [ senha_confirmada, setSenhaConf ] = useState('');
 
-    const armazenamento = new MMKVLoader().initialize();
-
     const cadastro = async (email, senha, senha_confirmada) => {
         if ( senha === senha_confirmada ) {
             try {
                 // Ensure that the `auth` instance is correctly passed to the function
                 const userCredential = await createUserWithEmailAndPassword(auth, email, senha);
                 console.log('Usuário criado:', userCredential.user);
-
-                /* Armazenar as informações do usuário no MMKV, com a chave e o seu valor, como os dois precisam ser strings, o objeto que contém o usuário foi transformado em string, e depois poderá ser transformado de volta para leitura. */
-                armazenamento.set( 'usuario', JSON.stringify(userCredential.user) );
 
                 /* Componente de alerta com botão de confirmação */
                 Alert.alert(
