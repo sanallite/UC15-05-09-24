@@ -1,38 +1,21 @@
-import React, { useState } from 'react';
+/* Teste com navegação aninhada */
 
-import { View, Text, TextInput, Pressable } from 'react-native';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-
-import './firebase';
-import { auth } from './firebase';
+import Um from './screens/Um';
+import Zero from './screens/Zero';
 
 export default function App() {
-  const [ email_d, setEmail ] = useState('');
-  const [ senha_d, setSenha ] = useState('');
+    const Stack = createNativeStackNavigator()
 
-  const cadastro = async (email, password) => {
-    try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      console.log('User registered:', userCredential.user);
-    } catch (error) {
-      console.error('Error registering user:', error.message);
-    }
-  };
-
-  return (
-    <View>
-        <Text>Teste</Text>
-        <TextInput placeholder='email' value={ email_d } onChangeText={ (novo) => setEmail(novo) } />
-        <TextInput secureTextEntry placeholder='password' value={ senha_d } onChangeText={ (novo) => setSenha(novo) } />
-
-        <Pressable onPress={ () => cadastro(email_d, senha_d) }>
-          <Text>Cadastrar</Text>
-        </Pressable>
-
-        <Pressable onPress={ () => console.log(auth.currentUser) }>
-          <Text>Verficar sessão</Text>
-        </Pressable>
-    </View>
-  )
+    return (
+        <NavigationContainer>
+            <Stack.Navigator initialRouteName='Zero'>
+                <Stack.Screen name='Um' component={ Um }/>
+                <Stack.Screen name='Zero' component={ Zero }/>
+            </Stack.Navigator>
+        </NavigationContainer>
+    )
 }
